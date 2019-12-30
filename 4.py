@@ -7,7 +7,11 @@ listOfPasswords = []
 
 for number in range(start, stop):
     if((int(str(number)[0]) <= int(str(number)[1])) & (int(str(number)[1]) <= int(str(number)[2])) & (int(str(number)[2]) <= int(str(number)[3])) & (int(str(number)[3]) <= int(str(number)[4])) & (int(str(number)[4]) <= int(str(number)[5]))):
-        if((int(str(number)[0]) == int(str(number)[1])) | (int(str(number)[1]) == int(str(number)[2])) | (int(str(number)[2]) == int(str(number)[3])) | (int(str(number)[3]) == int(str(number)[4])) | (int(str(number)[4]) == int(str(number)[5]))):
+        if((((int(str(number)[0]) == (int(str(number)[1])))) & (int(str(number)[1]) < (int(str(number)[2]))))|
+        (((int(str(number)[1]) == (int(str(number)[2])))) & (int(str(number)[2]) < (int(str(number)[3]))) & (int(str(number)[1]) > (int(str(number)[0]))))|
+        (((int(str(number)[2]) == (int(str(number)[3])))) & (int(str(number)[3]) < (int(str(number)[4]))) & (int(str(number)[2]) > (int(str(number)[1]))))|
+        (((int(str(number)[3]) == (int(str(number)[4])))) & (int(str(number)[4]) < (int(str(number)[5]))) & (int(str(number)[3]) > (int(str(number)[2]))))|
+        (((int(str(number)[4]) == (int(str(number)[5])))) & (int(str(number)[4]) > (int(str(number)[3]))))):
             listOfPasswords.append(number)
         
-print(len(listOfPasswords))
+print(len(listOfPasswords))   
